@@ -1,6 +1,7 @@
 name: Test
 on:
-  push: ['main']
+  push:
+    branchs: [main]
 jobs:
   update:
     name: Test
