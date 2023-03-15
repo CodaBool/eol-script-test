@@ -15,7 +15,5 @@ jobs:
       run: npm ci
     - name: Run Scripts
       run: npm start
-    # - name: read file
-    #   run: |
-    #     ls ./src
-    #     ls ./releases
+    - name: read file
+      run: cat releases/amazon-rds-mysql.json
