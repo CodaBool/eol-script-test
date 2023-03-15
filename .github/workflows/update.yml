@@ -1,19 +1,19 @@
-name: Test
+name: test
 on:
   push:
     branchs: [main]
 jobs:
   update:
-    name: Test
+    name: test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
-      with:
-        node-version: 18 # https://github.com/actions/node-versions/blob/main/versions-manifest.json
+      with: # available versions = https://github.com/actions/node-versions/blob/main/versions-manifest.json
+        node-version: 18
     - name: Download Packages
       run: npm ci
     - name: Run Scripts
       run: npm start
-    - name: read file
+    - name: Verify Results
       run: cat releases/amazon-rds-mysql.json

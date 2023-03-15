@@ -30,10 +30,10 @@ for (const [db, url] of Object.entries(dbs)) {
     // first table is minor, second is major
     let minor = false
     if (i === '0') {
-      console.log('Scraping', db, 'minor')
+      console.log('AWS RDS: Scraping', db, 'minor')
       minor = true
     } else {
-      console.log('Scraping', db, 'major')
+      console.log('AWS RDS: Scraping', db, 'major')
     }
 
     // select the table rows
@@ -84,5 +84,4 @@ for (const [db, url] of Object.entries(dbs)) {
   }
 
   fs.writeFileSync(`releases/amazon-rds-${db}.json`, JSON.stringify(releases, null, 2))
-  // fs.writeFileSync(`releases/amazon-rds-${db}.json`, JSON.stringify([...minors, ...majors], null, 2))
 }
