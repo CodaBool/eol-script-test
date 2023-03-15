@@ -14,12 +14,8 @@ jobs:
     - name: Download Packages
       run: npm ci
     - name: Run Scripts
-      run: |
-        ls
-        ls ./src
-        ls ./releases
-        npm start
-    - name: read file
-      run: |
-        ls ./src
-        ls ./releases
+      run: npm start
+    # - name: read file
+    #   run: |
+    #     ls ./src
+    #     ls ./releases

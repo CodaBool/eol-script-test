@@ -83,6 +83,6 @@ for (const [db, url] of Object.entries(dbs)) {
     }
   }
 
-  fs.writeFileSync(`./releases/amazon-rds-${db}.json`, JSON.stringify(releases, null, 2))
+  fs.writeFileSync(`releases/amazon-rds-${db}.json`, JSON.stringify(releases, null, 2))
   // fs.writeFileSync(`releases/amazon-rds-${db}.json`, JSON.stringify([...minors, ...majors], null, 2))
 }
