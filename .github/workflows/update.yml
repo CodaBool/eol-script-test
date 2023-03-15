@@ -1,0 +1,20 @@
+name: Test
+on:
+  push: ['main']
+jobs:
+  update:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18 # https://github.com/actions/node-versions/blob/main/versions-manifest.json
+    - name: Download Packages
+      run: npm ci
+    - name: Run Scripts
+      run: npm start
+    - name: read file
+      run: |
+        ls ./src
+        ls ./releases
